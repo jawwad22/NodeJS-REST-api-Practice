@@ -5,15 +5,18 @@ router.get('/ninja', function (req, res) {
     res.send({ type: 'GET' });
 })
 //add a new ninja
-router.get('/ninja', function (req, res) {
+router.post('/ninja', function (req, res) {
     res.send({ type: 'POST' });
 })
 
 //update a ninja
-router.get('/ninja/:id', function (req, res) {
+router.put('/ninja/:id', function (req, res) {
     res.send({ type: 'PUT' });
 })
 //delete a ninja
-router.get('/ninja/:id',function(req,res){
+router.delete('/ninja/:id',function(req,res){
     res.send({type:'DELETE'});
     })
+
+
+module.exports=router;
