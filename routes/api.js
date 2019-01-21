@@ -16,7 +16,13 @@ Ninja.create(req.body).then(function(ninja){
 //update a ninja
 router.put('/ninja/:id', function (req, res,next) {
    
-    res.send({ type: 'PUT' });
+    Ninja.findByIdAndUpdate({_id:req.params.id},req.body).then(
+        function(){
+           Ninja.findById({_id:req.params.id}).then(function(ninja){
+               res.send(ninja)
+           })
+        }
+    )
 })
 //delete a ninja
 router.delete('/ninja/:id',function(req,res,next){
