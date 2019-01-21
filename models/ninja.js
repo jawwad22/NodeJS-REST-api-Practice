@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const Scehema=mongoose.Schema;
+const Schema=mongoose.Schema;
 
 const NinjaSchema=new Schema({
     name: {
